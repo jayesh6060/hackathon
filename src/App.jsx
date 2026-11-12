@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ContinuousAnimeExperience from './components/ContinuousAnimeExperience';
 import DedicatedRegisterPage from './pages/DedicatedRegisterPage';
+import AdminPage from './pages/AdminPage';
 
 export default function App() {
   const [currentRoute, setCurrentRoute] = useState(() => {
@@ -8,6 +9,7 @@ export default function App() {
       const path = window.location.pathname;
       if (path === '/register' || path.startsWith('/register')) return 'register';
       if (window.location.search.includes('page=register')) return 'register';
+      if (path === '/admin' || path.startsWith('/admin') || window.location.search.includes('page=admin')) return 'admin';
     }
     return 'home';
   });
@@ -17,6 +19,8 @@ export default function App() {
       const path = window.location.pathname;
       if (path === '/register' || path.startsWith('/register') || window.location.search.includes('page=register')) {
         setCurrentRoute('register');
+      } else if (path === '/admin' || path.startsWith('/admin') || window.location.search.includes('page=admin')) {
+        setCurrentRoute('admin');
       } else {
         setCurrentRoute('home');
       }
@@ -31,6 +35,10 @@ export default function App() {
       window.history.pushState({}, '', '/register' + query);
       setCurrentRoute('register');
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (route === 'admin') {
+      window.history.pushState({}, '', '/admin' + query);
+      setCurrentRoute('admin');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       window.history.pushState({}, '', '/');
       setCurrentRoute('home');
@@ -40,6 +48,10 @@ export default function App() {
 
   if (currentRoute === 'register') {
     return <DedicatedRegisterPage onBack={() => navigateTo('home')} />;
+  }
+
+  if (currentRoute === 'admin') {
+    return <AdminPage onNavigate={navigateTo} />;
   }
 
   return (
