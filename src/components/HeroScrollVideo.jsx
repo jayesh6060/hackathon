@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Calendar, MapPin, ChevronDown, Play, Pause, Flame, Zap, ArrowRight, ShieldCheck, Terminal, Compass, Sliders, Volume2 } from 'lucide-react';
+import { Calendar, MapPin, ChevronDown, Play, Pause, Flame, Zap, ArrowRight, ShieldCheck, Terminal, Compass, Sliders } from 'lucide-react';
 import CountdownTimer from './CountdownTimer';
 import { HACKATHON_INFO, STORY_BEATS } from '../data/hackathonData';
 import { playUiClick, playCyberChime } from '../utils/audioSystem';

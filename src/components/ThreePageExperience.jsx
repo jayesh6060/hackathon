@@ -4,7 +4,7 @@ import confetti from 'canvas-confetti';
 import {
   Calendar, MapPin, Trophy, Crown, ArrowRight, Sparkles, Check,
   Clock, ShieldCheck, QrCode, Download, Share2, Copy, RefreshCw,
-  Compass, ChevronRight, ChevronDown, HelpCircle, Building, Volume2, VolumeX,
+  Compass, ChevronRight, ChevronDown, HelpCircle, Building,
   ExternalLink, Layers, Award, Play, Users, Star, Phone, MessageSquare, Lock
 } from 'lucide-react';
 import CountdownTimer from './CountdownTimer';
@@ -317,22 +317,6 @@ export default function ThreePageExperience() {
                 className="hidden sm:inline-flex items-center px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-neutral-300 hover:text-white uppercase cursor-pointer transition-colors"
               >
                 TEAM LOGIN
-              </button>
-
-              {/* Audio Toggle (Frosted Glass Button) */}
-              <button
-                onClick={() => {
-                  playUiClick();
-                  toggleBgmSoundtrack((active) => setIsAudioPlaying(active));
-                }}
-                title="Toggle Anime BGM"
-                className={`p-2 rounded-xl border backdrop-blur-xl transition-all cursor-pointer shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)] ${
-                  isAudioPlaying
-                    ? 'bg-[#F6A43A]/20 text-[#F6A43A] border-[#F6A43A]/70 shadow-[0_0_15px_rgba(246,164,58,0.35)]'
-                    : 'bg-white/5 text-[#F3EBDD]/60 border-white/15 hover:border-white/30 hover:text-white'
-                }`}
-              >
-                {isAudioPlaying ? <Volume2 className="w-3.5 h-3.5 animate-pulse" /> : <VolumeX className="w-3.5 h-3.5" />}
               </button>
 
               {/* Register Button */}

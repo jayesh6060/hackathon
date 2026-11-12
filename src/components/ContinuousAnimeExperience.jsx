@@ -7,7 +7,7 @@ import confetti from 'canvas-confetti';
 import {
   Calendar, MapPin, Trophy, Crown, ArrowRight, ArrowUp, ArrowUpRight, Sparkles, Check,
   Clock, ShieldCheck, QrCode, Download, Share2, Copy, RefreshCw,
-  Compass, ChevronRight, ChevronDown, HelpCircle, Building, Volume2, VolumeX,
+  Compass, ChevronRight, ChevronDown, HelpCircle, Building,
   ExternalLink, Layers, Award, Play, Users, Star, Phone, MessageSquare,
   Flame, Terminal, Zap, BookOpen, Send, CheckCircle2, AlertCircle, Lock
 } from 'lucide-react';
@@ -250,18 +250,6 @@ export default function ContinuousAnimeExperience() {
 
           {/* Right Action Cluster (Frosted Glass Interactive Elements) */}
           <div className="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
-            {/* Audio Toggle (Frosted Glass Button) */}
-            <button
-              onClick={handleToggleAudio}
-              className={`p-2 sm:p-2.5 rounded-xl border backdrop-blur-xl transition-all cursor-pointer shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)] flex-shrink-0 ${
-                isAudioPlaying 
-                  ? 'bg-[#F6A43A]/20 border-[#F6A43A]/70 text-[#F6A43A] shadow-[0_0_15px_rgba(246,164,58,0.35)]' 
-                  : 'bg-white/5 border-white/15 text-neutral-400 hover:text-white hover:bg-white/10 hover:border-white/30'
-              }`}
-              title="Toggle Epic Anime Soundtrack"
-            >
-              {isAudioPlaying ? <Volume2 className="w-4 h-4 animate-pulse" /> : <VolumeX className="w-4 h-4" />}
-            </button>
 
             {/* Help Desk Modal Trigger (Frosted Glass Capsule) */}
             <button
