@@ -15,10 +15,18 @@ export default function App() {
   });
 
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname;
+      if (path === '/register' || path.startsWith('/register') || window.location.search.includes('page=register')) {
+        window.location.replace('https://forms.gle/4UKxifNAgwn1NUri7');
+        return;
+      }
+    }
+
     const handlePopState = () => {
       const path = window.location.pathname;
       if (path === '/register' || path.startsWith('/register') || window.location.search.includes('page=register')) {
-        setCurrentRoute('register');
+        window.location.replace('https://forms.gle/4UKxifNAgwn1NUri7');
       } else if (path === '/admin' || path.startsWith('/admin') || window.location.search.includes('page=admin')) {
         setCurrentRoute('admin');
       } else {
@@ -32,9 +40,7 @@ export default function App() {
 
   const navigateTo = (route, query = '') => {
     if (route === 'register') {
-      window.history.pushState({}, '', '/register' + query);
-      setCurrentRoute('register');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.open('https://forms.gle/4UKxifNAgwn1NUri7', '_blank');
     } else if (route === 'admin') {
       window.history.pushState({}, '', '/admin' + query);
       setCurrentRoute('admin');

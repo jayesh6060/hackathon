@@ -321,7 +321,7 @@ export default function ThreePageExperience() {
 
               {/* Register Button */}
               <button
-                onClick={() => goToPage(2)}
+                onClick={() => window.open('https://forms.gle/4UKxifNAgwn1NUri7', '_blank')}
                 className="px-3.5 sm:px-5 py-2 rounded-xl bg-gradient-to-r from-[#F6A43A] via-[#FF7138] to-[#F6A43A] hover:from-[#FFB959] hover:to-[#FF8955] text-[#101A2B] font-chakra font-black text-[11px] sm:text-xs uppercase tracking-wider shadow-[0_0_20px_rgba(246,164,58,0.45),inset_0_1px_1px_rgba(255,255,255,0.4)] hover:shadow-[0_0_30px_rgba(246,164,58,0.7)] hover:scale-105 active:scale-95 transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
               >
                 <span>REGISTER (₹650)</span>
@@ -510,7 +510,7 @@ export default function ThreePageExperience() {
 
                 {/* Big REGISTER NOW Button with Lightning Bolt */}
                 <button
-                  onClick={() => goToPage(2)}
+                  onClick={() => window.open('https://forms.gle/4UKxifNAgwn1NUri7', '_blank')}
                   className="px-6 sm:px-8 py-3 rounded-full bg-black/85 border-2 border-[#F6A43A] hover:bg-[#F6A43A] hover:text-[#101A2B] text-white font-chakra font-black text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2 shadow-[0_0_30px_rgba(246,164,58,0.4)] hover:shadow-[0_0_40px_rgba(246,164,58,0.8)] hover:scale-105 active:scale-95 transition-all cursor-pointer"
                 >
                   <span className="text-sm">⚡</span>
@@ -614,7 +614,7 @@ export default function ThreePageExperience() {
                   <div className="p-3.5 rounded-xl bg-black/50 border border-white/10 text-xs text-[#F3EBDD]/90 flex flex-wrap items-center justify-between gap-3 font-chakra">
                     <span>Selected your domain? Register your squad for the 24H battle at JITD Library.</span>
                     <button
-                      onClick={() => goToPage(2)}
+                      onClick={() => window.open('https://forms.gle/4UKxifNAgwn1NUri7', '_blank')}
                       className="px-5 py-2 bg-[#F6A43A] text-[#101A2B] rounded-full font-black text-xs uppercase tracking-wider hover:bg-[#FF7138] transition-colors cursor-pointer"
                     >
                       REGISTER SQUAD ➔
