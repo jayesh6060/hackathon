@@ -659,21 +659,21 @@ export default function ThreePageExperience() {
                             <div className="hidden sm:flex items-center justify-between w-full">
                               <div className={`w-[45%] ${isLeft ? 'text-right' : 'flex justify-end'}`}>
                                 {isLeft ? (
-                                  <div>
+                                  <div className="p-3.5 rounded-xl bg-[#0b1424]/90 border border-white/15 backdrop-blur-xl shadow-lg">
                                     <span className="font-mono text-[11px] font-bold tracking-wider uppercase block" style={{ color: item.color }}>
                                       {item.time}
                                     </span>
-                                    <h4 className="font-chakra font-black text-sm md:text-base text-white uppercase leading-snug mt-0.5">
+                                    <h4 className="font-chakra font-black text-sm md:text-base text-[#FFE8A3] uppercase leading-snug mt-0.5 drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
                                       {item.title}
                                     </h4>
-                                    <p className="text-[11px] text-neutral-300 font-sans mt-0.5 leading-relaxed">
+                                    <p className="text-[11px] text-[#E2E8F0] font-sans mt-0.5 leading-relaxed font-medium">
                                       {item.desc}
                                     </p>
                                   </div>
                                 ) : (
                                   <div className="pr-4">
                                     <span 
-                                      className="px-3 py-0.5 rounded-md border text-[11px] font-mono tracking-wider backdrop-blur-md bg-[#101A2B]/60"
+                                      className="px-3 py-1 rounded-lg border text-[11px] font-mono font-bold tracking-wider backdrop-blur-md bg-[#0b1424]/90"
                                       style={{ borderColor: item.color, color: item.color }}
                                     >
                                       {item.phase}
@@ -688,21 +688,21 @@ export default function ThreePageExperience() {
                                 {isLeft ? (
                                   <div className="pl-4">
                                     <span 
-                                      className="px-3 py-0.5 rounded-md border text-[11px] font-mono tracking-wider backdrop-blur-md bg-[#101A2B]/60"
+                                      className="px-3 py-1 rounded-lg border text-[11px] font-mono font-bold tracking-wider backdrop-blur-md bg-[#0b1424]/90"
                                       style={{ borderColor: item.color, color: item.color }}
                                     >
                                       {item.phase}
                                     </span>
                                   </div>
                                 ) : (
-                                  <div>
+                                  <div className="p-3.5 rounded-xl bg-[#0b1424]/90 border border-white/15 backdrop-blur-xl shadow-lg">
                                     <span className="font-mono text-[11px] font-bold tracking-wider uppercase block" style={{ color: item.color }}>
                                       {item.time}
                                     </span>
-                                    <h4 className="font-chakra font-black text-sm md:text-base text-white uppercase leading-snug mt-0.5">
+                                    <h4 className="font-chakra font-black text-sm md:text-base text-[#FFE8A3] uppercase leading-snug mt-0.5 drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
                                       {item.title}
                                     </h4>
-                                    <p className="text-[11px] text-neutral-300 font-sans mt-0.5 leading-relaxed">
+                                    <p className="text-[11px] text-[#E2E8F0] font-sans mt-0.5 leading-relaxed font-medium">
                                       {item.desc}
                                     </p>
                                   </div>
@@ -711,22 +711,24 @@ export default function ThreePageExperience() {
                             </div>
 
                             {/* Mobile Single Column */}
-                            <div className="sm:hidden pl-10 pr-2 space-y-1 w-full">
-                              <span 
-                                className="inline-block px-2.5 py-0.5 rounded-md border text-[10px] font-mono tracking-wider"
-                                style={{ borderColor: item.color, color: item.color }}
-                              >
-                                {item.phase}
-                              </span>
-                              <span className="font-mono text-[11px] font-bold tracking-wider uppercase block" style={{ color: item.color }}>
-                                {item.time}
-                              </span>
-                              <h4 className="font-chakra font-black text-sm text-white uppercase">
-                                {item.title}
-                              </h4>
-                              <p className="text-[11px] text-neutral-300 font-sans leading-relaxed">
-                                {item.desc}
-                              </p>
+                            <div className="sm:hidden pl-10 pr-2 w-full">
+                              <div className="p-3 rounded-xl bg-[#0b1424]/90 border border-white/15 backdrop-blur-xl shadow-lg space-y-1">
+                                <span 
+                                  className="inline-block px-2.5 py-0.5 rounded-md border text-[10px] font-mono font-bold tracking-wider"
+                                  style={{ borderColor: item.color, color: item.color }}
+                                >
+                                  {item.phase}
+                                </span>
+                                <span className="font-mono text-[11px] font-bold tracking-wider uppercase block" style={{ color: item.color }}>
+                                  {item.time}
+                                </span>
+                                <h4 className="font-chakra font-black text-sm text-[#FFE8A3] uppercase">
+                                  {item.title}
+                                </h4>
+                                <p className="text-[11px] text-[#E2E8F0] font-sans leading-relaxed font-medium">
+                                  {item.desc}
+                                </p>
+                              </div>
                             </div>
                           </div>
                         );

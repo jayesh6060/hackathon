@@ -553,19 +553,23 @@ export default function ContinuousAnimeExperience() {
       </section>
 
       {/* ========================================================= */}
-      {/* 7. SECTION 04: 24-HOUR CHECKPOINT TIMELINE (EXACT MOCKUP)  */}
+      {/* 7. SECTION 04: 24-HOUR CHECKPOINT TIMELINE (HIGH CONTRAST) */}
       {/* ========================================================= */}
       <section id="schedule" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto relative z-10 border-t border-white/10">
-        <div className="text-center mb-16 sm:mb-24">
-          <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-[#F6A43A] block mb-2">
-            04 The 24-Hour Timeline
-          </span>
-          <h2 className="font-chakra font-black text-3xl sm:text-5xl text-[#F3EBDD] uppercase">
+        <div className="text-center mb-16 sm:mb-24 relative z-10">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-[#0c1626]/90 border border-[#F6A43A]/40 shadow-[0_0_20px_rgba(246,164,58,0.25)] backdrop-blur-xl mb-3">
+            <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-[#F6A43A]">
+              04 The 24-Hour Timeline
+            </span>
+          </div>
+          <h2 className="font-chakra font-black text-3xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#FFF2B2] via-[#F6A43A] to-[#FF8B3D] uppercase filter drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)] tracking-wide">
             Continuous Sprint Checkpoints
           </h2>
-          <p className="mt-2 text-xs sm:text-sm font-sans text-neutral-300 max-w-xl mx-auto">
-            From arrival & kit distribution to midnight pitch reviews and the final grand award gala.
-          </p>
+          <div className="mt-3 inline-block px-5 py-2 rounded-2xl bg-[#0b1320]/85 border border-white/15 backdrop-blur-xl shadow-[0_8px_24px_rgba(0,0,0,0.6)] max-w-xl mx-auto">
+            <p className="text-xs sm:text-sm font-sans font-medium text-[#FFECC7] leading-relaxed">
+              From arrival & kit distribution to midnight pitch reviews and the final grand award gala.
+            </p>
+          </div>
         </div>
 
         {/* Checkpoint Timeline Container */}
@@ -606,18 +610,18 @@ export default function ContinuousAnimeExperience() {
                     {/* Left Column (44% width) */}
                     <div className={`w-[44%] ${isLeft ? 'text-right' : 'flex justify-end'}`}>
                       {isLeft ? (
-                        /* Content on the Left */
-                        <div className="space-y-1.5 transition-transform duration-300 group-hover:-translate-x-1">
+                        /* Content on the Left inside high-contrast dark frosted card */
+                        <div className="p-5 rounded-2xl bg-[#0b1424]/90 border border-white/15 backdrop-blur-xl shadow-[0_10px_35px_rgba(0,0,0,0.7)] transition-all duration-300 group-hover:border-[#F6A43A]/50 group-hover:shadow-[0_15px_45px_rgba(0,0,0,0.9)] space-y-1.5 text-right">
                           <span 
                             className="font-mono text-xs font-bold tracking-wider uppercase block"
                             style={{ color: item.color }}
                           >
                             {item.time}
                           </span>
-                          <h3 className="font-chakra font-black text-xl sm:text-2xl text-white tracking-wide uppercase leading-snug">
+                          <h3 className="font-chakra font-black text-xl sm:text-2xl text-[#FFE8A3] tracking-wide uppercase leading-snug drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] group-hover:text-white transition-colors">
                             {item.title}
                           </h3>
-                          <p className="text-xs sm:text-sm text-neutral-300 font-sans leading-relaxed">
+                          <p className="text-xs sm:text-sm text-[#E2E8F0] font-sans leading-relaxed font-medium">
                             {item.desc}
                           </p>
                         </div>
@@ -625,11 +629,11 @@ export default function ContinuousAnimeExperience() {
                         /* Phase Badge on the Left (for Right-aligned content) */
                         <div className="flex justify-end pr-6">
                           <span 
-                            className="px-3.5 py-1 rounded-md border text-xs font-mono tracking-wider backdrop-blur-md bg-[#101A2B]/60 transition-all duration-300 group-hover:scale-105"
+                            className="px-4 py-1.5 rounded-xl border text-xs font-mono font-bold tracking-wider backdrop-blur-xl bg-[#0b1424]/90 shadow-[0_4px_20px_rgba(0,0,0,0.5)] transition-all duration-300 group-hover:scale-105"
                             style={{ 
                               borderColor: item.color, 
                               color: item.color,
-                              boxShadow: `0 0 10px ${item.glowColor}`
+                              boxShadow: `0 0 12px ${item.glowColor}`
                             }}
                           >
                             {item.phase}
@@ -647,29 +651,29 @@ export default function ContinuousAnimeExperience() {
                         /* Phase Badge on the Right (for Left-aligned content) */
                         <div className="flex justify-start pl-6">
                           <span 
-                            className="px-3.5 py-1 rounded-md border text-xs font-mono tracking-wider backdrop-blur-md bg-[#101A2B]/60 transition-all duration-300 group-hover:scale-105"
+                            className="px-4 py-1.5 rounded-xl border text-xs font-mono font-bold tracking-wider backdrop-blur-xl bg-[#0b1424]/90 shadow-[0_4px_20px_rgba(0,0,0,0.5)] transition-all duration-300 group-hover:scale-105"
                             style={{ 
                               borderColor: item.color, 
                               color: item.color,
-                              boxShadow: `0 0 10px ${item.glowColor}`
+                              boxShadow: `0 0 12px ${item.glowColor}`
                             }}
                           >
                             {item.phase}
                           </span>
                         </div>
                       ) : (
-                        /* Content on the Right */
-                        <div className="space-y-1.5 transition-transform duration-300 group-hover:translate-x-1">
+                        /* Content on the Right inside high-contrast dark frosted card */
+                        <div className="p-5 rounded-2xl bg-[#0b1424]/90 border border-white/15 backdrop-blur-xl shadow-[0_10px_35px_rgba(0,0,0,0.7)] transition-all duration-300 group-hover:border-[#F6A43A]/50 group-hover:shadow-[0_15px_45px_rgba(0,0,0,0.9)] space-y-1.5 text-left">
                           <span 
                             className="font-mono text-xs font-bold tracking-wider uppercase block"
                             style={{ color: item.color }}
                           >
                             {item.time}
                           </span>
-                          <h3 className="font-chakra font-black text-xl sm:text-2xl text-white tracking-wide uppercase leading-snug">
+                          <h3 className="font-chakra font-black text-xl sm:text-2xl text-[#FFE8A3] tracking-wide uppercase leading-snug drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] group-hover:text-white transition-colors">
                             {item.title}
                           </h3>
-                          <p className="text-xs sm:text-sm text-neutral-300 font-sans leading-relaxed">
+                          <p className="text-xs sm:text-sm text-[#E2E8F0] font-sans leading-relaxed font-medium">
                             {item.desc}
                           </p>
                         </div>
@@ -678,36 +682,44 @@ export default function ContinuousAnimeExperience() {
                   </div>
 
                   {/* MOBILE LAYOUT (< md screens: Single Column on right of vertical line) */}
-                  <div className="md:hidden pl-14 pr-2 space-y-2 w-full">
-                    {/* Phase Badge */}
-                    <span 
-                      className="inline-block px-3 py-0.5 rounded-md border text-[11px] font-mono tracking-wider backdrop-blur-md bg-[#101A2B]/60"
-                      style={{ 
-                        borderColor: item.color, 
-                        color: item.color 
-                      }}
-                    >
-                      {item.phase}
-                    </span>
+                  <div className="md:hidden pl-14 pr-2 w-full">
+                    <div className="p-4 rounded-2xl bg-[#0b1424]/90 border border-white/15 backdrop-blur-xl shadow-[0_10px_35px_rgba(0,0,0,0.7)] space-y-2">
+                      {/* Phase Badge */}
+                      <span 
+                        className="inline-block px-3 py-1 rounded-md border text-[11px] font-mono font-bold tracking-wider backdrop-blur-md bg-[#101A2B]/80"
+                        style={{ 
+                          borderColor: item.color, 
+                          color: item.color,
+                          boxShadow: `0 0 8px ${item.glowColor}`
+                        }}
+                      >
+                        {item.phase}
+                      </span>
 
-                    {/* Time Tag */}
-                    <span 
-                      className="font-mono text-xs font-bold tracking-wider uppercase block"
-                      style={{ color: item.color }}
-                    >
-                      {item.time}
-                    </span>
+                      {/* Time Tag */}
+                      <span 
+                        className="font-mono text-xs font-bold tracking-wider uppercase block"
+                        style={{ color: item.color }}
+                      >
+                        {item.time}
+                      </span>
 
-                    {/* Title */}
-                    <h3 className="font-chakra font-black text-lg text-white tracking-wide uppercase leading-snug">
-                      {item.title}
-                    </h3>
+                      {/* Title */}
+                      <h3 className="font-chakra font-black text-lg text-[#FFE8A3] tracking-wide uppercase leading-snug drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+                        {item.title}
+                      </h3>
 
-                    {/* Description */}
-                    <p className="text-xs text-neutral-300 font-sans leading-relaxed">
-                      {item.desc}
-                    </p>
+                      {/* Description */}
+                      <p className="text-xs text-[#E2E8F0] font-sans leading-relaxed font-medium">
+                        {item.desc}
+                      </p>
+                    </div>
                   </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
                 </div>
               );
             })}
