@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://clockit2026.jitd.ac.in/sitemap.xml
+

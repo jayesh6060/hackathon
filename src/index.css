@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Inter:wght@400;500;600;700&family=Inter+Tight:ital,wght@0,300..900;1,300..900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .font-chakra {
+    font-family: 'Chakra Petch', ui-sans-serif, system-ui, sans-serif !important;
+  }
+  .font-inter {
+    font-family: 'Inter Tight', 'Inter', ui-sans-serif, system-ui, sans-serif !important;
+  }
+  .font-jetbrains {
+    font-family: 'JetBrains Mono', ui-monospace, monospace !important;
+  }
+
+  /* 3D Gold Metallic Bevel Title from Official Clockit Mockup */
+  .text-gold-3d {
+    background: linear-gradient(180deg, #FFFFFF 0%, #FFE9B3 18%, #F6B84A 45%, #E59A25 68%, #9E5906 95%, #5C3202 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 3px 0 #5C3202) drop-shadow(0 6px 0 #3D2001) drop-shadow(0 12px 30px rgba(0,0,0,0.95));
+    -webkit-text-stroke: 1.5px rgba(255, 230, 160, 0.5);
+  }
+
+  /* Clean Non-Glowing Gold Outline 2026 (Crisp, High-Contrast, No Bloom) */
+  .text-neon-gold,
+  .text-outline-gold {
+    color: transparent;
+    -webkit-text-stroke: 2.5px #F6A43A;
+    letter-spacing: 0.24em;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9), 0 4px 12px rgba(0, 0, 0, 0.85);
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.95));
+  }
+
+  /* Gold Sparkle Border */
+  .border-gold-glow {
+    border: 1px solid rgba(246, 164, 58, 0.7);
+    box-shadow: 0 0 20px rgba(246, 164, 58, 0.25), inset 0 0 15px rgba(246, 164, 58, 0.12);
+  }
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+    background-color: #101A2B;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  body {
+    background-color: #101A2B;
+    color: #F3EBDD;
+    overflow-x: hidden;
+    font-family: 'Inter Tight', 'Inter', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Headings inherit HackWithAditya Chakra Petch display font */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Chakra Petch', ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  /* Code and numbers tabular alignment */
+  code, kbd, samp, pre {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  /* Custom Warm Golden Minimal Scrollbar */
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #101A2B;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #F6A43A, #FF7138);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #FFB959, #FF8955);
+  }
+}
+
+/* Elegant Fantasy Glass Surfaces */
+.glass-fantasy {
+  background: rgba(16, 26, 43, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(243, 235, 221, 0.1);
+}
+
+.glass-fantasy-amber {
+  background: rgba(18, 28, 48, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(246, 164, 58, 0.35);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(246, 164, 58, 0.15);
+}
+
+.glass-fantasy-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-fantasy-hover:hover {
+  background: rgba(22, 36, 62, 0.88);
+  border-color: rgba(246, 164, 58, 0.5);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6), 0 0 35px rgba(246, 164, 58, 0.22);
+  transform: translateY(-3px);
+}
+
+/* Subtle Golden Text Glow */
+.text-glow-amber {
+  text-shadow: 0 0 20px rgba(246, 164, 58, 0.55), 0 0 40px rgba(246, 164, 58, 0.25);
+}
+
+.text-glow-sky {
+  text-shadow: 0 0 20px rgba(139, 201, 237, 0.5), 0 0 40px rgba(139, 201, 237, 0.2);
+}
+
+/* Editorial Chapter Accent Rule */
+.chapter-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(246, 164, 58, 0.6), transparent);
+}
+
+/* Print Stylesheet for Official Citadel Guild Pass */
+@media print {
+  header, footer, nav, video, canvas {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #101A2B !important;
+  }
+  .printable-guild-pass {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 90% !important;
+    max-width: 600px !important;
+    background: #ffffff !important;
+    border: 2px solid #F6A43A !important;
+    color: #101A2B !important;
+    box-shadow: none !important;
+    padding: 24px !important;
+    border-radius: 16px !important;
+  }
+  .printable-guild-pass * {
+    color: #101A2B !important;
+  }
+  .printable-guild-pass .text-\[\#F6A43A\] {
+    color: #D97706 !important;
+  }
+}
+
