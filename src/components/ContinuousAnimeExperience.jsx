@@ -260,14 +260,16 @@ export default function ContinuousAnimeExperience() {
               <span>Help desk</span>
             </button>
 
-            {/* Register CTA Button (Opens Google Form in new tab) */}
-            <button
-              onClick={() => window.open('https://forms.gle/4UKxifNAgwn1NUri7', '_blank')}
+            {/* Register CTA Button (Direct link to Google Form in new tab) */}
+            <a
+              href="https://forms.gle/4UKxifNAgwn1NUri7"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-3.5 sm:px-4 xl:px-5 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-[#F6A43A] via-[#FF7138] to-[#F6A43A] hover:from-[#FFB959] hover:to-[#FF8955] text-[#101A2B] font-chakra font-black text-xs uppercase tracking-wider shadow-[0_0_20px_rgba(246,164,58,0.45),inset_0_1px_1px_rgba(255,255,255,0.4)] hover:shadow-[0_0_30px_rgba(246,164,58,0.7)] hover:scale-105 active:scale-95 transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap flex-shrink-0"
             >
               <span>Register Squad</span>
               <ExternalLink className="w-3.5 h-3.5" />
-            </button>
+            </a>
           </div>
         </div>
       </header>
@@ -347,13 +349,15 @@ export default function ContinuousAnimeExperience() {
 
         {/* Action CTAs */}
         <div className="mt-5 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-          <button
-            onClick={() => window.open('https://forms.gle/4UKxifNAgwn1NUri7', '_blank')}
+          <a
+            href="https://forms.gle/4UKxifNAgwn1NUri7"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-8 py-4 rounded-xl bg-gradient-to-r from-[#F6A43A] to-[#FF7138] hover:scale-105 text-[#101A2B] font-chakra font-black text-sm uppercase tracking-wider shadow-xl transition-all cursor-pointer flex items-center justify-center gap-2"
           >
             <span>Register Squad (₹650)</span>
             <ExternalLink className="w-4 h-4" />
-          </button>
+          </a>
           <button
             onClick={() => scrollToAnchor('tracks')}
             className="px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-[#F3EBDD] font-chakra font-bold text-sm uppercase tracking-wider transition-all cursor-pointer"
@@ -485,13 +489,15 @@ export default function ContinuousAnimeExperience() {
                 </div>
               </div>
 
-              <button
-                onClick={() => window.open('https://forms.gle/4UKxifNAgwn1NUri7', '_blank')}
+              <a
+                href="https://forms.gle/4UKxifNAgwn1NUri7"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full py-3 rounded-xl border border-[#F6A43A]/40 bg-[#F6A43A]/10 hover:bg-[#F6A43A] hover:text-[#101A2B] text-neutral-100 font-mono text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer group-hover:shadow-[0_0_20px_rgba(246,164,58,0.3)]"
               >
                 <span>Enlist Squad</span>
                 <ExternalLink className="w-3.5 h-3.5" />
-              </button>
+              </a>
             </div>
           ))}
         </div>
@@ -948,12 +954,14 @@ export default function ContinuousAnimeExperience() {
               </div>
 
               <div className="pt-1 sm:pt-2">
-                <button
-                  onClick={() => window.open('https://forms.gle/4UKxifNAgwn1NUri7', '_blank')}
+                <a
+                  href="https://forms.gle/4UKxifNAgwn1NUri7"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-[#F47025] hover:bg-[#e05e15] text-white font-chakra font-bold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-md inline-flex items-center justify-center gap-1.5"
                 >
                   <span>REGISTER →</span>
-                </button>
+                </a>
               </div>
             </div>
 
@@ -1006,14 +1014,14 @@ export default function ContinuousAnimeExperience() {
                 </h4>
                 <ul className="space-y-1.5 text-[11px] sm:text-xs font-mono text-neutral-400">
                   <li>
-                    <button onClick={() => window.open('https://forms.gle/4UKxifNAgwn1NUri7', '_blank')} className="hover:text-white transition-colors cursor-pointer text-left">
+                    <a href="https://forms.gle/4UKxifNAgwn1NUri7" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors cursor-pointer text-left block">
                       Register
-                    </button>
+                    </a>
                   </li>
                   <li>
-                    <button onClick={() => window.open('https://forms.gle/4UKxifNAgwn1NUri7', '_blank')} className="hover:text-white transition-colors cursor-pointer text-left">
+                    <a href="https://forms.gle/4UKxifNAgwn1NUri7" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors cursor-pointer text-left block">
                       Team Login
-                    </button>
+                    </a>
                   </li>
                   <li>
                     <button onClick={() => scrollToAnchor('about')} className="hover:text-white transition-colors cursor-pointer text-left">

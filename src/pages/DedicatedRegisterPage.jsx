@@ -326,218 +326,51 @@ export default function DedicatedRegisterPage({ onBack }) {
 
           </div>
         ) : (
-          /* ========================================================= */
-          /* DEDICATED REGISTRATION FORM                                */
-          /* ========================================================= */
-          <div className="space-y-8">
+          <div className="space-y-6">
             
             {/* Header Banner */}
-            <div className="text-center space-y-3">
+            <div className="text-center space-y-2">
               <h1 className="font-chakra font-black text-3xl sm:text-5xl text-[#F3EBDD] uppercase tracking-tight">
-                Seal Your Battle Entry
+                Squad Registration Form
               </h1>
               <p className="text-xs sm:text-sm font-sans text-neutral-300 max-w-xl mx-auto leading-relaxed">
-                Registration fee is <strong className="text-white">₹650 per squad</strong>. Form your team of 2 to 4 members to lock in your verified pass for the 24-hour national hackathon.
+                Registration fee is <strong className="text-white">₹650 per team</strong>. Complete the official Google Form below or open it directly in a new window.
               </p>
             </div>
 
-            {/* Registration Form Card */}
-            <form onSubmit={handleRegister} className="p-6 sm:p-10 rounded-3xl bg-[#101A2B]/90 border border-white/20 backdrop-blur-2xl shadow-2xl space-y-6">
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                
-                {/* Squad Name */}
-                <div>
-                  <label className="block font-mono text-xs font-bold uppercase tracking-wider text-neutral-300 mb-1.5">
-                    Squad / Team Name *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="e.g. CyberSentinels"
-                    value={formData.teamName}
-                    onChange={(e) => setFormData({ ...formData, teamName: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:border-[#F6A43A] text-sm text-white font-mono focus:outline-none focus:ring-1 focus:ring-[#F6A43A] transition-all"
-                  />
-                </div>
-
-                {/* Innovation Track (Classified Arenas 01-05) */}
-                <div>
-                  <label className="block font-mono text-xs font-bold uppercase tracking-wider text-neutral-300 mb-1.5">
-                    Innovation Track (5 Classified Arenas) *
-                  </label>
-                  <select
-                    value={formData.selectedDomain}
-                    onChange={(e) => setFormData({ ...formData, selectedDomain: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[#101A2B] border border-white/15 focus:border-[#F6A43A] text-xs text-white font-mono focus:outline-none focus:ring-1 focus:ring-[#F6A43A] transition-all"
-                  >
-                    {GUILD_TRACKS.map(t => (
-                      <option key={t.id} value={t.id}>{t.name} ({t.badge})</option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Team Lead Name */}
-                <div>
-                  <label className="block font-mono text-xs font-bold uppercase tracking-wider text-neutral-300 mb-1.5">
-                    Team Lead Name *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="Full name"
-                    value={formData.leaderName}
-                    onChange={(e) => setFormData({ ...formData, leaderName: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:border-[#F6A43A] text-sm text-white font-mono focus:outline-none focus:ring-1 focus:ring-[#F6A43A] transition-all"
-                  />
-                </div>
-
-                {/* Team Lead Email */}
-                <div>
-                  <label className="block font-mono text-xs font-bold uppercase tracking-wider text-neutral-300 mb-1.5">
-                    Team Lead Email *
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    placeholder="student@college.edu"
-                    value={formData.leaderEmail}
-                    onChange={(e) => setFormData({ ...formData, leaderEmail: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:border-[#F6A43A] text-sm text-white font-mono focus:outline-none focus:ring-1 focus:ring-[#F6A43A] transition-all"
-                  />
-                </div>
-
-                {/* Contact Phone (WhatsApp) */}
-                <div>
-                  <label className="block font-mono text-xs font-bold uppercase tracking-wider text-neutral-300 mb-1.5">
-                    Contact Phone (WhatsApp) *
-                  </label>
-                  <input
-                    type="tel"
-                    required
-                    placeholder="+91 XXXXX XXXXX"
-                    value={formData.leaderPhone}
-                    onChange={(e) => setFormData({ ...formData, leaderPhone: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:border-[#F6A43A] text-sm text-white font-mono focus:outline-none focus:ring-1 focus:ring-[#F6A43A] transition-all"
-                  />
-                </div>
-
-                {/* College / Institution */}
-                <div>
-                  <label className="block font-mono text-xs font-bold uppercase tracking-wider text-neutral-300 mb-1.5">
-                    College / Institution Name *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="e.g. Jain Institute of Technology, Davanagere"
-                    value={formData.college}
-                    onChange={(e) => setFormData({ ...formData, college: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:border-[#F6A43A] text-sm text-white font-mono focus:outline-none focus:ring-1 focus:ring-[#F6A43A] transition-all"
-                  />
-                </div>
-
-                {/* Squad Member Count */}
-                <div className="sm:col-span-2">
-                  <label className="block font-mono text-xs font-bold uppercase tracking-wider text-neutral-300 mb-1.5">
-                    Squad Size (2 to 4 Members)
-                  </label>
-                  <div className="grid grid-cols-3 gap-3">
-                    {['2', '3', '4'].map((size) => (
-                      <button
-                        key={size}
-                        type="button"
-                        onClick={() => setFormData({ ...formData, teamSize: size })}
-                        className={`py-2.5 rounded-xl border font-mono text-xs font-bold transition-all ${
-                          formData.teamSize === size
-                            ? 'bg-[#F6A43A] text-[#101A2B] border-[#F6A43A] shadow-md'
-                            : 'bg-white/5 text-neutral-300 border-white/15 hover:border-white/30'
-                        }`}
-                      >
-                        {size} Members
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Additional Member Names */}
-                {parseInt(formData.teamSize, 10) >= 2 && (
-                  <div>
-                    <label className="block font-mono text-xs font-bold uppercase tracking-wider text-neutral-400 mb-1">
-                      Member 02 Name
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Squad Member 2 Full Name"
-                      value={formData.member2}
-                      onChange={(e) => setFormData({ ...formData, member2: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/15 text-sm text-white font-mono focus:outline-none focus:border-[#F6A43A]"
-                    />
-                  </div>
-                )}
-
-                {parseInt(formData.teamSize, 10) >= 3 && (
-                  <div>
-                    <label className="block font-mono text-xs font-bold uppercase tracking-wider text-neutral-400 mb-1">
-                      Member 03 Name
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Squad Member 3 Full Name"
-                      value={formData.member3}
-                      onChange={(e) => setFormData({ ...formData, member3: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/15 text-sm text-white font-mono focus:outline-none focus:border-[#F6A43A]"
-                    />
-                  </div>
-                )}
-
-                {parseInt(formData.teamSize, 10) >= 4 && (
-                  <div className="sm:col-span-2">
-                    <label className="block font-mono text-xs font-bold uppercase tracking-wider text-neutral-400 mb-1">
-                      Member 04 Name
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Squad Member 4 Full Name"
-                      value={formData.member4}
-                      onChange={(e) => setFormData({ ...formData, member4: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/15 text-sm text-white font-mono focus:outline-none focus:border-[#F6A43A]"
-                    />
-                  </div>
-                )}
-
-              </div>
-
-              {/* Fee and Submit */}
-              <div className="pt-4 border-t border-white/10 space-y-4">
-                <div className="flex items-center justify-between text-xs font-mono px-4 py-3 rounded-xl bg-white/5 border border-white/10">
-                  <div className="flex items-center gap-2">
-                    <span className="text-[#F6A43A] font-bold">TOTAL EXPEDITION FEE:</span>
-                    <span className="text-white font-bold text-sm">₹ 650</span>
-                  </div>
-                  <span className="text-neutral-400 text-[11px]">All 2-4 squad members covered</span>
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-[#F6A43A] to-[#FF7138] hover:from-[#FFB959] hover:to-[#FF8955] text-[#101A2B] font-chakra font-black text-sm uppercase tracking-wider shadow-xl shadow-orange-500/20 transition-all cursor-pointer flex items-center justify-center gap-2"
+            {/* Google Form Card */}
+            <div className="p-4 sm:p-6 rounded-3xl bg-[#101A2B]/90 border border-white/20 backdrop-blur-2xl shadow-2xl space-y-4">
+              <div className="flex flex-wrap items-center justify-between gap-3 px-2 pb-2 border-b border-white/10">
+                <span className="font-mono text-xs font-bold text-[#F6A43A] uppercase tracking-wider">
+                  Official Google Registration Form
+                </span>
+                <a
+                  href="https://forms.gle/4UKxifNAgwn1NUri7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#F6A43A] hover:bg-[#FF7138] text-[#101A2B] font-chakra font-black text-xs uppercase tracking-wider transition-all shadow-md"
                 >
-                  {loading ? (
-                    <>
-                      <RefreshCw className="w-4 h-4 animate-spin" />
-                      <span>Enlisting Squad Into Citadel...</span>
-                    </>
-                  ) : (
-                    <>
-                      <span>Claim Squad Expedition Pass (₹650)</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </>
-                  )}
-                </button>
+                  <span>Open in Google Forms</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
               </div>
 
-            </form>
+              {/* Embedded Google Form iframe */}
+              <div className="w-full bg-white rounded-2xl overflow-hidden shadow-inner">
+                <iframe
+                  src="https://docs.google.com/forms/d/e/1FAIpQLScf28p3RlJXv50O-r2oHRjiiR10YABBzK2ew2jqCV9Jjp5dtQ/viewform?embedded=true"
+                  width="100%"
+                  height="1200"
+                  frameBorder="0"
+                  marginHeight="0"
+                  marginWidth="0"
+                  title="CLOCKIT 2026 Google Registration Form"
+                  className="w-full min-h-[900px] sm:min-h-[1200px] border-0"
+                >
+                  Loading Google Form…
+                </iframe>
+              </div>
+            </div>
 
             {/* Direct Support Strip */}
             <div className="p-4 rounded-2xl bg-[#0b1329]/80 border border-white/10 backdrop-blur-md flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-neutral-400">
