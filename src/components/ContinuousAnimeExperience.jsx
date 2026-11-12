@@ -720,11 +720,6 @@ export default function ContinuousAnimeExperience() {
             })}
           </div>
         </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
 
         {/* Secondary Detail Strip: 24H Hall Open & Amenities */}
         <div className="mt-16 p-6 rounded-3xl bg-[#101A2B]/85 border border-white/10 backdrop-blur-xl flex flex-wrap items-center justify-around gap-6 text-center max-w-xl mx-auto">
