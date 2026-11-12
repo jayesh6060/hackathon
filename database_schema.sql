@@ -27,8 +27,8 @@ CREATE TABLE IF NOT EXISTS public.team_members (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     team_id UUID REFERENCES public.teams(id) ON DELETE CASCADE,
     member_name VARCHAR(150) NOT NULL,
-    member_email VARCHAR(180) NOT NULL,
-    member_phone VARCHAR(30) NOT NULL,
+    member_email VARCHAR(180),
+    member_phone VARCHAR(30),
     role_designation VARCHAR(80) DEFAULT 'Developer',
     college_id_verified BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()

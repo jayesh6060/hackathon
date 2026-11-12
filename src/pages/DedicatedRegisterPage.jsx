@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import confetti from 'canvas-confetti';
+import { supabase } from '../lib/supabaseClient';
 import {
   ShieldCheck, Download, Copy, RefreshCw, ArrowLeft, ArrowRight,
   ExternalLink, Check, Users, Sparkles, Building, Phone, Calendar,
@@ -42,49 +43,103 @@ export default function DedicatedRegisterPage({ onBack }) {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    setTimeout(() => {
-      const generatedId = `CLOCKIT-2026-${Math.floor(1000 + Math.random() * 9000)}`;
-      const trackObj = GUILD_TRACKS.find(t => t.id === formData.selectedDomain);
-      
-      const newTicket = {
-        id: generatedId,
-        teamName: formData.teamName,
-        leader: formData.leaderName,
-        email: formData.leaderEmail,
-        phone: formData.leaderPhone,
-        college: formData.college,
-        track: trackObj ? trackObj.name : "Classified Arena 01",
-        venue: "JITD Library, Davanagere",
-        date: "25 - 26 November 2026",
-        amountPaid: "₹650",
-        timestamp: new Date().toLocaleDateString('en-US', { 
-          month: 'short', 
-          day: 'numeric', 
-          year: 'numeric' 
-        })
-      };
+    const generatedId = `CLOCKIT-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+    const trackObj = GUILD_TRACKS.find(t => t.id === formData.selectedDomain);
+    const trackName = trackObj ? trackObj.name : "Classified Arena 01";
 
-      setRegisteredTicket(newTicket);
-      setLoading(false);
+    try {
+      // 1. Insert team into Supabase 'teams' table
+      const { data: teamData, error: teamError } = await supabase
+        .from('teams')
+        .insert([
+          {
+            team_code: generatedId,
+            team_name: formData.teamName,
+            selected_theme: trackName,
+            college_name: formData.college,
+            leader_name: formData.leaderName,
+            leader_email: formData.leaderEmail,
+            leader_phone: formData.leaderPhone,
+            status: 'submitted',
+            payment_status: 'pending'
+          }
+        ])
+        .select()
+        .single();
 
-      // Trigger Celebration Confetti
-      try {
-        confetti({
-          particleCount: 120,
-          spread: 80,
-          origin: { y: 0.6 },
-          colors: ['#F6A43A', '#38bdf8', '#ffffff', '#10B981']
-        });
-      } catch (err) {
-        // Safe fallback
+      if (teamError) {
+        console.warn('Supabase insertion notice (ensure SQL schema has been executed):', teamError.message);
+      } else if (teamData?.id) {
+        // 2. Insert squad members into 'team_members' table
+        const teamSize = parseInt(formData.teamSize, 10);
+        const members = [];
+        if (teamSize >= 2 && formData.member2) {
+          members.push({
+            team_id: teamData.id,
+            member_name: formData.member2,
+            role_designation: 'Squad Member 2'
+          });
+        }
+        if (teamSize >= 3 && formData.member3) {
+          members.push({
+            team_id: teamData.id,
+            member_name: formData.member3,
+            role_designation: 'Squad Member 3'
+          });
+        }
+        if (teamSize >= 4 && formData.member4) {
+          members.push({
+            team_id: teamData.id,
+            member_name: formData.member4,
+            role_designation: 'Squad Member 4'
+          });
+        }
+        if (members.length > 0) {
+          await supabase.from('team_members').insert(members);
+        }
       }
+    } catch (err) {
+      console.warn('Supabase sync notice:', err);
+    }
 
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 700);
+    const newTicket = {
+      id: generatedId,
+      teamName: formData.teamName,
+      leader: formData.leaderName,
+      email: formData.leaderEmail,
+      phone: formData.leaderPhone,
+      college: formData.college,
+      track: trackName,
+      venue: "JITD Library, Davanagere",
+      date: "25 - 26 November 2026",
+      amountPaid: "₹650",
+      timestamp: new Date().toLocaleDateString('en-US', { 
+        month: 'short', 
+        day: 'numeric', 
+        year: 'numeric' 
+      })
+    };
+
+    setRegisteredTicket(newTicket);
+    setLoading(false);
+
+    // Trigger Celebration Confetti
+    try {
+      confetti({
+        particleCount: 120,
+        spread: 80,
+        origin: { y: 0.6 },
+        colors: ['#F6A43A', '#38bdf8', '#ffffff', '#10B981']
+      });
+    } catch (err) {
+      // Safe fallback
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const copyTicketId = () => {

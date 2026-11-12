@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { supabase } from '../lib/supabaseClient';
 import { 
   ArrowLeft, 
   Search, 
@@ -107,6 +108,38 @@ export default function AdminPage({ onNavigate }) {
       score: 85
     }
   ]);
+
+  useEffect(() => {
+    async function fetchSupabaseTeams() {
+      try {
+        const { data, error } = await supabase
+          .from('teams')
+          .select('*, team_members(*)');
+        if (!error && data && data.length > 0) {
+          const liveTeams = data.map((t) => ({
+            id: t.team_code || t.id,
+            name: t.team_name,
+            lead: t.leader_name,
+            email: t.leader_email,
+            phone: t.leader_phone,
+            college: t.college_name,
+            theme: t.selected_theme,
+            membersCount: (t.team_members?.length || 0) + 1,
+            status: t.status === 'shortlisted' ? 'Shortlisted' : (t.status === 'rejected' ? 'Rejected' : 'Submitted'),
+            date: new Date(t.created_at).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
+            score: t.payment_status === 'paid' ? 'Paid' : 'Pending'
+          }));
+          setTeams(liveTeams);
+        }
+      } catch (err) {
+        console.warn('Live team fetch notice:', err);
+      }
+    }
+
+    if (isAuthenticated) {
+      fetchSupabaseTeams();
+    }
+  }, [isAuthenticated]);
 
   const handleLogin = (e) => {
     e.preventDefault();
