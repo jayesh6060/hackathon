@@ -366,6 +366,27 @@ export default function ContinuousAnimeExperience() {
           </button>
         </div>
 
+        {/* Registration Closes Tab (Placed just below buttons) */}
+        <a
+          href="https://forms.gle/4UKxifNAgwn1NUri7"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 group inline-flex items-center gap-2.5 px-5 py-2 sm:py-2.5 rounded-xl bg-[#070e1f]/85 hover:bg-[#0c1833]/90 border border-[#F6A43A]/40 hover:border-[#F6A43A] backdrop-blur-xl shadow-[0_4px_20px_rgba(246,164,58,0.25)] hover:shadow-[0_4px_25px_rgba(246,164,58,0.45)] hover:scale-105 transition-all cursor-pointer"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F6A43A] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#F6A43A]"></span>
+          </span>
+          <Clock className="w-3.5 h-3.5 text-[#F6A43A]" />
+          <span className="font-mono text-xs sm:text-sm font-bold uppercase tracking-wider text-[#F6A43A] group-hover:text-[#FFB959] transition-colors">
+            Registration Closes:
+          </span>
+          <span className="font-mono text-xs sm:text-sm font-black text-white tracking-wide">
+            20 Nov · 12:00 AM
+          </span>
+          <ExternalLink className="w-3.5 h-3.5 text-[#F6A43A]/70 group-hover:text-[#F6A43A] transition-colors" />
+        </a>
+
       </section>
 
       {/* ========================================================= */}

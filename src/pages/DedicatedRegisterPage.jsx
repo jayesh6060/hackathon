@@ -334,7 +334,7 @@ export default function DedicatedRegisterPage({ onBack }) {
                 Squad Registration Form
               </h1>
               <p className="text-xs sm:text-sm font-sans text-neutral-300 max-w-xl mx-auto leading-relaxed">
-                Registration fee is <strong className="text-white">₹650 per team</strong>. Complete the official Google Form below or open it directly in a new window.
+                Registration fee is <strong className="text-white">₹650 per team</strong> · <strong className="text-[#F6A43A]">Registration strictly closes 20 Nov at 12:00 AM</strong>. Complete the official Google Form below or open it directly in a new window.
               </p>
             </div>
 
