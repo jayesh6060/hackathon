@@ -177,20 +177,6 @@ export default function ContinuousAnimeExperience() {
       {/* Floating Golden/Cyan Anime Ember Particles */}
       <ParticleCanvas />
 
-      {/* Top Urgent Deadline Announcement Banner */}
-      <a
-        href="https://forms.gle/4UKxifNAgwn1NUri7"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="relative z-50 block w-full bg-gradient-to-r from-[#F6A43A] via-[#FF7138] to-[#F6A43A] py-2 px-4 text-center text-[#101A2B] font-chakra font-black text-xs sm:text-sm uppercase tracking-wider shadow-md hover:brightness-110 transition-all cursor-pointer select-none"
-      >
-        <div className="flex items-center justify-center gap-2">
-          <Clock className="w-4 h-4 text-[#101A2B] animate-pulse" />
-          <span>Registration Strictly Closes: <strong className="underline underline-offset-2">20 Nov · 12:00 AM</strong> — Register Squad (₹650) Now</span>
-          <ExternalLink className="w-3.5 h-3.5 text-[#101A2B]" />
-        </div>
-      </a>
-
       {/* 2. Floating Island Glassmorphism Navigation Bar */}
       <header className="sticky top-2 sm:top-4 z-50 w-full px-2 sm:px-4 md:px-6 max-w-7xl mx-auto select-none">
         <div className="w-full h-16 sm:h-18 px-3.5 sm:px-5 md:px-6 rounded-2xl sm:rounded-3xl bg-[#0b1329]/55 backdrop-blur-2xl backdrop-saturate-150 border border-white/15 shadow-[0_8px_32px_0_rgba(0,0,0,0.45),inset_0_1px_1px_0_rgba(255,255,255,0.22)] flex items-center justify-between gap-2 sm:gap-4 transition-all duration-300">
@@ -380,28 +366,20 @@ export default function ContinuousAnimeExperience() {
           </button>
         </div>
 
-        {/* Registration Closes Notice Tab (High-Contrast, Glowing & Unmissable) */}
-        <a
-          href="https://forms.gle/4UKxifNAgwn1NUri7"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-6 group inline-flex flex-wrap items-center justify-center gap-3 px-6 py-3.5 rounded-2xl bg-[#0c1626]/95 hover:bg-[#14233c] border-2 border-[#F6A43A] hover:border-[#FFB959] backdrop-blur-2xl shadow-[0_0_35px_rgba(246,164,58,0.5)] hover:shadow-[0_0_50px_rgba(246,164,58,0.8)] hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
-        >
-          <span className="relative flex h-3 w-3">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F6A43A] opacity-90"></span>
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-[#F6A43A] shadow-[0_0_12px_#F6A43A]"></span>
+        {/* Registration Closes Notification Pill (Pure Notification - Not a Link) */}
+        <div className="mt-5 inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-[#070e1f]/90 border border-[#F6A43A]/60 backdrop-blur-xl shadow-[0_4px_25px_rgba(246,164,58,0.3)] select-none">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F6A43A] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#F6A43A]"></span>
           </span>
-          <div className="flex items-center gap-2">
-            <Clock className="w-4 h-4 text-[#F6A43A] animate-pulse" />
-            <span className="font-chakra font-black text-xs sm:text-sm uppercase tracking-widest text-[#F6A43A] group-hover:text-[#FFB959] transition-colors">
-              Registration Closes:
-            </span>
-            <span className="font-chakra font-black text-xs sm:text-sm text-[#101A2B] bg-[#F6A43A] px-3 py-1 rounded-lg shadow-[0_0_15px_rgba(246,164,58,0.6)]">
-              20 NOV · 12:00 AM
-            </span>
-          </div>
-          <ExternalLink className="w-4 h-4 text-[#F6A43A] group-hover:translate-x-0.5 transition-transform" />
-        </a>
+          <Clock className="w-4 h-4 text-[#F6A43A]" />
+          <span className="font-mono text-xs sm:text-sm font-bold uppercase tracking-wider text-[#F6A43A]">
+            Registration Closes:
+          </span>
+          <span className="font-mono text-xs sm:text-sm font-black text-white tracking-wide">
+            20 Nov · 12:00 AM
+          </span>
+        </div>
 
       </section>
 
