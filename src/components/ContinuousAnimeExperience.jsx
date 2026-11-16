@@ -367,16 +367,16 @@ export default function ContinuousAnimeExperience() {
         </div>
 
         {/* Registration Closes Notification Pill (Pure Notification - Not a Link) */}
-        <div className="mt-5 inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-[#070e1f]/90 border border-[#F6A43A]/60 backdrop-blur-xl shadow-[0_4px_25px_rgba(246,164,58,0.3)] select-none">
-          <span className="relative flex h-2.5 w-2.5">
+        <div className="mt-6 inline-flex items-center gap-3 sm:gap-3.5 px-6 py-3 sm:px-8 sm:py-4 rounded-xl sm:rounded-2xl bg-[#070e1f]/90 border sm:border-2 border-[#F6A43A]/70 backdrop-blur-xl shadow-[0_6px_35px_rgba(246,164,58,0.35)] select-none">
+          <span className="relative flex h-3 w-3 sm:h-3.5 sm:w-3.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F6A43A] opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#F6A43A]"></span>
+            <span className="relative inline-flex rounded-full h-3 w-3 sm:h-3.5 sm:w-3.5 bg-[#F6A43A] shadow-[0_0_8px_#F6A43A]"></span>
           </span>
-          <Clock className="w-4 h-4 text-[#F6A43A]" />
-          <span className="font-mono text-xs sm:text-sm font-bold uppercase tracking-wider text-[#F6A43A]">
+          <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-[#F6A43A]" />
+          <span className="font-mono text-xs sm:text-sm md:text-base font-bold uppercase tracking-wider text-[#F6A43A]">
             Registration Closes:
           </span>
-          <span className="font-mono text-xs sm:text-sm font-black text-white tracking-wide">
+          <span className="font-mono text-xs sm:text-sm md:text-base font-black text-white tracking-wide">
             20 Nov · 12:00 AM
           </span>
         </div>
