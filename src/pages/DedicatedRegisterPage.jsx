@@ -4,7 +4,7 @@ import { supabase } from '../lib/supabaseClient';
 import {
   ShieldCheck, Download, Copy, RefreshCw, ArrowLeft, ArrowRight,
   ExternalLink, Check, Users, Sparkles, Building, Phone, Calendar,
-  MapPin, Trophy, Lock
+  MapPin, Trophy, Lock, Heart
 } from 'lucide-react';
 import { GUILD_TRACKS, STUDENT_COORDINATORS } from '../data/hackathonData';
 
@@ -328,47 +328,50 @@ export default function DedicatedRegisterPage({ onBack }) {
         ) : (
           <div className="space-y-6">
             
-            {/* Header Banner */}
-            <div className="text-center space-y-2">
-              <h1 className="font-chakra font-black text-3xl sm:text-5xl text-[#F3EBDD] uppercase tracking-tight">
-                Squad Registration Form
-              </h1>
-              <p className="text-xs sm:text-sm font-sans text-neutral-300 max-w-xl mx-auto leading-relaxed">
-                Registration fee is <strong className="text-white">₹650 per team</strong> · <strong className="text-[#F6A43A]">Registration strictly closes 20 Nov at 12:00 AM</strong>. Complete the official Google Form below or open it directly in a new window.
-              </p>
-            </div>
-
-            {/* Google Form Card */}
-            <div className="p-4 sm:p-6 rounded-3xl bg-[#101A2B]/90 border border-white/20 backdrop-blur-2xl shadow-2xl space-y-4">
-              <div className="flex flex-wrap items-center justify-between gap-3 px-2 pb-2 border-b border-white/10">
-                <span className="font-mono text-xs font-bold text-[#F6A43A] uppercase tracking-wider">
-                  Official Google Registration Form
-                </span>
-                <a
-                  href="https://forms.gle/4UKxifNAgwn1NUri7"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#F6A43A] hover:bg-[#FF7138] text-[#101A2B] font-chakra font-black text-xs uppercase tracking-wider transition-all shadow-md"
-                >
-                  <span>Open in Google Forms</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
+            {/* Registration Closed Card */}
+            <div className="p-8 sm:p-12 rounded-3xl bg-[#101A2B]/95 border-2 border-[#F6A43A]/80 backdrop-blur-2xl shadow-[0_0_50px_rgba(246,164,58,0.35)] text-center space-y-5 max-w-2xl mx-auto">
+              <div className="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-br from-[#F6A43A]/25 to-[#FF7138]/25 border border-[#F6A43A]/60 flex items-center justify-center text-[#F6A43A] shadow-[0_0_35px_rgba(246,164,58,0.5)]">
+                <Heart className="w-10 h-10 text-[#F6A43A] animate-pulse" />
               </div>
 
-              {/* Embedded Google Form iframe */}
-              <div className="w-full bg-white rounded-2xl overflow-hidden shadow-inner">
-                <iframe
-                  src="https://docs.google.com/forms/d/e/1FAIpQLScf28p3RlJXv50O-r2oHRjiiR10YABBzK2ew2jqCV9Jjp5dtQ/viewform?embedded=true"
-                  width="100%"
-                  height="1200"
-                  frameBorder="0"
-                  marginHeight="0"
-                  marginWidth="0"
-                  title="CLOCKIT 2026 Google Registration Form"
-                  className="w-full min-h-[900px] sm:min-h-[1200px] border-0"
+              <div className="space-y-2">
+                <h1 className="font-chakra font-black text-3xl sm:text-5xl text-white uppercase tracking-tight">
+                  Registration Has Been Closed
+                </h1>
+                <p className="font-chakra font-bold text-lg sm:text-xl text-[#F6A43A] flex items-center justify-center gap-2">
+                  <Sparkles className="w-4 h-4" />
+                  <span>Thank you for your support!</span>
+                  <Sparkles className="w-4 h-4" />
+                </p>
+              </div>
+
+              <p className="text-xs sm:text-sm font-sans text-neutral-300 max-w-lg mx-auto leading-relaxed">
+                The squad registration deadline for CLOCKIT 2026 has officially concluded. We are deeply grateful to every developer, innovator, and college team who registered.
+              </p>
+
+              {/* Event Reminder */}
+              <div className="p-4 rounded-2xl bg-[#0b1329]/90 border border-white/10 text-left space-y-2 text-xs font-mono text-neutral-300">
+                <div className="flex items-center gap-2 text-white font-semibold">
+                  <Calendar className="w-4 h-4 text-[#F6A43A]" />
+                  <span>Sprint Date: 25 – 26 November 2026</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-[#38bdf8]" />
+                  <span>Venue: JITD Library & Innovation Hub, Davanagere</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Trophy className="w-4 h-4 text-[#F6A43A]" />
+                  <span>Trophy Pool: ₹ 30,000 Cash Prize</span>
+                </div>
+              </div>
+
+              <div className="pt-3">
+                <button
+                  onClick={handleGoHome}
+                  className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#F6A43A] to-[#FF7138] hover:from-[#FFB959] hover:to-[#FF8955] text-[#101A2B] font-chakra font-black text-sm uppercase tracking-wider shadow-lg transition-all cursor-pointer"
                 >
-                  Loading Google Form…
-                </iframe>
+                  ← Return to Home Page
+                </button>
               </div>
             </div>
 

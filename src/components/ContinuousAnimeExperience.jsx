@@ -15,6 +15,7 @@ import CountdownTimer from './CountdownTimer';
 import CanvasVideoBackground from './CanvasVideoBackground';
 import ParticleCanvas from './ParticleCanvas';
 import HelpDeskModal from './HelpDeskModal';
+import RegistrationClosedModal from './RegistrationClosedModal';
 import {
   HACKATHON_INFO,
   ADVISORY_COMMITTEE,
@@ -34,6 +35,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function ContinuousAnimeExperience() {
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const [helpDeskOpen, setHelpDeskOpen] = useState(false);
+  const [regClosedModalOpen, setRegClosedModalOpen] = useState(false);
   const [selectedTrack, setSelectedTrack] = useState(GUILD_TRACKS[0].id);
   const [activeFaq, setActiveFaq] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -260,16 +262,13 @@ export default function ContinuousAnimeExperience() {
               <span>Help desk</span>
             </button>
 
-            {/* Register CTA Button (Direct link to Google Form in new tab) */}
-            <a
-              href="https://forms.gle/4UKxifNAgwn1NUri7"
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* Register CTA Button (Shows Registration Closed Thank You Message) */}
+            <button
+              onClick={() => setRegClosedModalOpen(true)}
               className="px-3.5 sm:px-4 xl:px-5 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-[#F6A43A] via-[#FF7138] to-[#F6A43A] hover:from-[#FFB959] hover:to-[#FF8955] text-[#101A2B] font-chakra font-black text-xs uppercase tracking-wider shadow-[0_0_20px_rgba(246,164,58,0.45),inset_0_1px_1px_rgba(255,255,255,0.4)] hover:shadow-[0_0_30px_rgba(246,164,58,0.7)] hover:scale-105 active:scale-95 transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap flex-shrink-0"
             >
               <span>Register Squad</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
+            </button>
           </div>
         </div>
       </header>
@@ -349,15 +348,12 @@ export default function ContinuousAnimeExperience() {
 
         {/* Action CTAs */}
         <div className="mt-5 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-          <a
-            href="https://forms.gle/4UKxifNAgwn1NUri7"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => setRegClosedModalOpen(true)}
             className="px-8 py-4 rounded-xl bg-gradient-to-r from-[#F6A43A] to-[#FF7138] hover:scale-105 text-[#101A2B] font-chakra font-black text-sm uppercase tracking-wider shadow-xl transition-all cursor-pointer flex items-center justify-center gap-2"
           >
             <span>Register Squad (₹650)</span>
-            <ExternalLink className="w-4 h-4" />
-          </a>
+          </button>
           <button
             onClick={() => scrollToAnchor('tracks')}
             className="px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-[#F3EBDD] font-chakra font-bold text-sm uppercase tracking-wider transition-all cursor-pointer"
@@ -366,8 +362,11 @@ export default function ContinuousAnimeExperience() {
           </button>
         </div>
 
-        {/* Registration Closed Notification Pill (Pure Notification - Not a Link) */}
-        <div className="mt-6 inline-flex items-center gap-3 sm:gap-3.5 px-6 py-3 sm:px-8 sm:py-4 rounded-xl sm:rounded-2xl bg-[#070e1f]/90 border sm:border-2 border-[#F6A43A]/70 backdrop-blur-xl shadow-[0_6px_35px_rgba(246,164,58,0.35)] select-none">
+        {/* Registration Closed Notification Pill (Clickable - Shows Thank You Message) */}
+        <div 
+          onClick={() => setRegClosedModalOpen(true)}
+          className="mt-6 inline-flex items-center gap-3 sm:gap-3.5 px-6 py-3 sm:px-8 sm:py-4 rounded-xl sm:rounded-2xl bg-[#070e1f]/90 border sm:border-2 border-[#F6A43A]/70 hover:border-[#FFB959] backdrop-blur-xl shadow-[0_6px_35px_rgba(246,164,58,0.35)] select-none cursor-pointer transition-all hover:scale-105 active:scale-95"
+        >
           <span className="relative flex h-3 w-3 sm:h-3.5 sm:w-3.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F6A43A] opacity-75"></span>
             <span className="relative inline-flex rounded-full h-3 w-3 sm:h-3.5 sm:w-3.5 bg-[#F6A43A] shadow-[0_0_8px_#F6A43A]"></span>
@@ -504,15 +503,12 @@ export default function ContinuousAnimeExperience() {
                 </div>
               </div>
 
-              <a
-                href="https://forms.gle/4UKxifNAgwn1NUri7"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => setRegClosedModalOpen(true)}
                 className="w-full py-3 rounded-xl border border-[#F6A43A]/40 bg-[#F6A43A]/10 hover:bg-[#F6A43A] hover:text-[#101A2B] text-neutral-100 font-mono text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer group-hover:shadow-[0_0_20px_rgba(246,164,58,0.3)]"
               >
                 <span>Enlist Squad</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
+              </button>
             </div>
           ))}
         </div>
@@ -969,14 +965,12 @@ export default function ContinuousAnimeExperience() {
               </div>
 
               <div className="pt-1 sm:pt-2">
-                <a
-                  href="https://forms.gle/4UKxifNAgwn1NUri7"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => setRegClosedModalOpen(true)}
                   className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-[#F47025] hover:bg-[#e05e15] text-white font-chakra font-bold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-md inline-flex items-center justify-center gap-1.5"
                 >
                   <span>REGISTER →</span>
-                </a>
+                </button>
               </div>
             </div>
 
@@ -1029,14 +1023,14 @@ export default function ContinuousAnimeExperience() {
                 </h4>
                 <ul className="space-y-1.5 text-[11px] sm:text-xs font-mono text-neutral-400">
                   <li>
-                    <a href="https://forms.gle/4UKxifNAgwn1NUri7" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors cursor-pointer text-left block">
+                    <button onClick={() => setRegClosedModalOpen(true)} className="hover:text-white transition-colors cursor-pointer text-left block">
                       Register
-                    </a>
+                    </button>
                   </li>
                   <li>
-                    <a href="https://forms.gle/4UKxifNAgwn1NUri7" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors cursor-pointer text-left block">
+                    <button onClick={() => setRegClosedModalOpen(true)} className="hover:text-white transition-colors cursor-pointer text-left block">
                       Team Login
-                    </a>
+                    </button>
                   </li>
                   <li>
                     <button onClick={() => scrollToAnchor('about')} className="hover:text-white transition-colors cursor-pointer text-left">
@@ -1117,6 +1111,12 @@ export default function ContinuousAnimeExperience() {
       <HelpDeskModal 
         isOpen={helpDeskOpen}
         onClose={() => setHelpDeskOpen(false)}
+      />
+
+      {/* Registration Closed Thank You Modal */}
+      <RegistrationClosedModal
+        isOpen={regClosedModalOpen}
+        onClose={() => setRegClosedModalOpen(false)}
       />
 
     </div>

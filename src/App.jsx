@@ -15,20 +15,12 @@ export default function App() {
   });
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const path = window.location.pathname;
-      if (path === '/register' || path.startsWith('/register') || window.location.search.includes('page=register')) {
-        window.location.replace('https://forms.gle/4UKxifNAgwn1NUri7');
-        return;
-      }
-    }
-
     const handlePopState = () => {
       const path = window.location.pathname;
-      if (path === '/register' || path.startsWith('/register') || window.location.search.includes('page=register')) {
-        window.location.replace('https://forms.gle/4UKxifNAgwn1NUri7');
-      } else if (path === '/admin' || path.startsWith('/admin') || window.location.search.includes('page=admin')) {
+      if (path === '/admin' || path.startsWith('/admin') || window.location.search.includes('page=admin')) {
         setCurrentRoute('admin');
+      } else if (path === '/register' || path.startsWith('/register') || window.location.search.includes('page=register')) {
+        setCurrentRoute('register');
       } else {
         setCurrentRoute('home');
       }
@@ -40,7 +32,9 @@ export default function App() {
 
   const navigateTo = (route, query = '') => {
     if (route === 'register') {
-      window.open('https://forms.gle/4UKxifNAgwn1NUri7', '_blank');
+      window.history.pushState({}, '', '/register');
+      setCurrentRoute('register');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (route === 'admin') {
       window.history.pushState({}, '', '/admin' + query);
       setCurrentRoute('admin');
