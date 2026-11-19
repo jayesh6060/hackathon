@@ -366,7 +366,7 @@ export default function ContinuousAnimeExperience() {
           </button>
         </div>
 
-        {/* Registration Closes Notification Pill (Pure Notification - Not a Link) */}
+        {/* Registration Closed Notification Pill (Pure Notification - Not a Link) */}
         <div className="mt-6 inline-flex items-center gap-3 sm:gap-3.5 px-6 py-3 sm:px-8 sm:py-4 rounded-xl sm:rounded-2xl bg-[#070e1f]/90 border sm:border-2 border-[#F6A43A]/70 backdrop-blur-xl shadow-[0_6px_35px_rgba(246,164,58,0.35)] select-none">
           <span className="relative flex h-3 w-3 sm:h-3.5 sm:w-3.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F6A43A] opacity-75"></span>
@@ -374,10 +374,10 @@ export default function ContinuousAnimeExperience() {
           </span>
           <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-[#F6A43A]" />
           <span className="font-mono text-xs sm:text-sm md:text-base font-bold uppercase tracking-wider text-[#F6A43A]">
-            Registration Closes:
+            Registration
           </span>
-          <span className="font-mono text-xs sm:text-sm md:text-base font-black text-white tracking-wide">
-            20 Nov · 12:00 AM
+          <span className="font-mono text-xs sm:text-sm md:text-base font-black text-white uppercase tracking-wide">
+            Has Been Closed
           </span>
         </div>
 
